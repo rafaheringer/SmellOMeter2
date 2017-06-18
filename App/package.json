@@ -1,0 +1,32 @@
+{
+  "name": "smellometer",
+  "version": "2.0.0",
+  "description": "The awesomest meter for your bathroom",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaheringer/SmellOMeter2"
+  },
+  "keywords": [
+    "slack",
+    "slash command"
+  ],
+  "author": "Rafael Heringer Carvalho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafaheringer/SmellOMeter2/issues"
+  },
+  "homepage": "https://github.com/rafaheringer/SmellOMeter2#readme",
+  "engines": {
+    "node": "5.1.1"
+  },
+  "dependencies": {
+    "botkit": "0.0.5",
+    "botkit-storage-mongo": "^1.0.2",
+    "mongodb": "^1.4.39"
+  }
+}

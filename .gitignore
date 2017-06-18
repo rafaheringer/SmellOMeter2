@@ -1,4 +1,8 @@
 .idea
+.vscode
+db_slackbutton_slash_command
+
+package-lock.json
 
 # Logs
 logs

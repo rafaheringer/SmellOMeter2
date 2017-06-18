@@ -43,8 +43,8 @@
 /* Uses the slack button feature to offer a real time bot to multiple teams */
 var Botkit = require('botkit');
 
-if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.PORT || !process.env.VERIFICATION_TOKEN) {
-    console.log('Error: Specify CLIENT_ID, CLIENT_SECRET, VERIFICATION_TOKEN and PORT in environment');
+if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.PORT || !process.env.VERIFICATION_TOKEN || !process.env.REDIRECT_URI) {
+    console.log('Error: Specify CLIENT_ID, CLIENT_SECRET, VERIFICATION_TOKEN, REDIRECT_URI and PORT in environment');
     process.exit(1);
 }
 
@@ -63,8 +63,9 @@ if (process.env.MONGOLAB_URI) {
 var controller = Botkit.slackbot(config).configureSlackApp(
     {
         clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        scopes: ['commands'],
+        //clientSecret: process.env.CLIENT_SECRET,
+        clientSecret: '8982e686d5459e44605a3b608113e035',
+        scopes: ['commands']
     }
 );
 
@@ -86,14 +87,10 @@ controller.setupWebserver(process.env.PORT, function (err, webserver) {
 //
 
 controller.on('slash_command', function (slashCommand, message) {
+    if (message.token !== process.env.VERIFICATION_TOKEN) return;
 
     switch (message.command) {
-        case "/echo": //handle the `/echo` slash command. We might have others assigned to this app too!
-            // The rules are simple: If there is no text following the command, treat it as though they had requested "help"
-            // Otherwise just echo back to them what they sent us.
-
-            // but first, let's make sure the token matches!
-            if (message.token !== process.env.VERIFICATION_TOKEN) return; //just ignore it.
+        case "/echo":
 
             // if no text was supplied, treat it as a help command
             if (message.text === "" || message.text === "help") {

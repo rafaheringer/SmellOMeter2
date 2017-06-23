@@ -4,7 +4,7 @@
   "description": "The awesomest meter for your bathroom",
   "main": "index.js",
   "scripts": {
-    "start": "set PORT=8765 && set CLIENT_ID=3072532717.200275013334 && set CLIENT_SECRET=8982e686d5459e44605a3b608113e035 && set VERIFICATION_TOKEN=Z4OP15lwVNKY7b1MCUpOdng0 && node index.js",
+    "start": "set PORT=8765 && set CLIENT_ID=3072532717.200275013334 && set CLIENT_SECRET=8982e686d5459e44605a3b608113e035 && set VERIFICATION_TOKEN=Z4OP15lwVNKY7b1MCUpOdng0 && set FIREBASE_URI=https://nibo-smellometer.firebaseio.com && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +26,10 @@
   },
   "dependencies": {
     "botkit": "0.0.5",
+    "botkit-storage-firebase": "git+https://github.com/esjay/botkit-storage-firebase.git",
     "botkit-storage-mongo": "^1.0.2",
-    "mongodb": "^1.4.39"
+    "firebase": "^4.1.3",
+    "mongodb": "^1.4.39",
+    "websocket-extensions": "^0.1.1"
   }
 }

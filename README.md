@@ -31,3 +31,10 @@ npm start
 Note que no arquivo `package.json` start script possui algumas configurações de exemplo sobre autenticação do seu app no slack. Remova essas configurações e as adicione como variável de ambiente ao colocar em produção.
 
 Não se esqueça que é necessário resgatar o CLIENT_ID e CLIENT_SECRET, para isso você deverá registrar o app no [site da API do Slack](https://api.slack.com/apps/).
+
+## Colocando no ar
+
+A solução escolhida foi o NOW da [Zeit.co](https://zeit.co) para hospedar rapidamente a aplicação Node e o [Firebase](https://firebase.google.com) como solução para guardar os dados resgatados dos sensores.
+
+Para criar um Firebase Database, você poderá seguir [tutorial](https://firebase.google.com/docs/server/setup).
+

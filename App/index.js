@@ -6,10 +6,12 @@ if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.PORT ||
 }
 
 var config = {}
-if (process.env.FIREBASE_URI) {
-    var FirebaseStorage = require('botkit-storage-firebase')({databaseURL: process.env.FIREBASE_URI});
+if (process.env.DATABASE_URI) {
+    var storageConfig = require('botkit-storage-mongo');
     config = {
-        storage: FirebaseStorage
+        storage: storageConfig({
+            mongoUri: process.env.DATABASE_URI
+        })
     };
 } else {
     config = {
@@ -64,6 +66,4 @@ controller.on('slash_command', function (slashCommand, message) {
 
     }
 
-})
-;
-
+});

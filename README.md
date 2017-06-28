@@ -34,7 +34,5 @@ Não se esqueça que é necessário resgatar o CLIENT_ID e CLIENT_SECRET, para i
 
 ## Colocando no ar
 
-A solução escolhida foi o NOW da [Zeit.co](https://zeit.co) para hospedar rapidamente a aplicação Node e o [Firebase](https://firebase.google.com) como solução para guardar os dados resgatados dos sensores.
-
-Para criar um Firebase Database, você poderá seguir [tutorial](https://firebase.google.com/docs/server/setup).
+A solução escolhida foi o NOW da [Zeit.co](https://zeit.co) para hospedar rapidamente a aplicação Node e o [MLab](https://mlab.com/) como solução MongoDB para guardar os dados resgatados dos sensores.
 
